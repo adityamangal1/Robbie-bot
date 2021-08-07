@@ -11,6 +11,22 @@
 </head>
 
 <body>
+
+    <div id="para" class="container4">
+        <h2 class="head2">Bot Commands 📝</h2>
+        <p>* Hi (Greeting)</p>
+        <p>* open Youtube, discord</p>
+        <p>* Meaning of "Word" (Dictionary)</p>
+        <p>* Hi (Greeting)</p>
+        <p>* Hi (Greeting)</p>
+        <p>* Hi (Greeting)</p>
+        <p class="enjoy">
+            Made with ❤️ | Aditya Mangal
+        </p>
+
+    </div>
+
+    <button id="btn" onclick="toggleHide();">Hide Commands 📝</button>
     <h1 class="ml11">
         <span class="text-wrapper">
             <span class="line line1"></span>
@@ -46,6 +62,20 @@
     <script>
         function reloadpage() {
             window.location.reload();
+        }
+
+        function toggleHide() {
+            // let btn = document.getElementById('btn');
+            let para = document.getElementById('para');
+            if (para.style.display != 'none') {
+                para.style.display = 'none';
+                btn.innerHTML = 'Show Rules 📝';
+
+            }
+            else {
+                para.style.display = 'block';
+                btn.innerHTML = 'Hide Rules 📝';
+            }
         }
     </script>
 

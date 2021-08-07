@@ -25,7 +25,7 @@ body {
 
 .logo {
   position: absolute;
-  left: 31.5rem;
+  left: 0.5rem;
   top: 0.5rem;
   width: 13%;
 }
@@ -50,6 +50,50 @@ body {
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
+}
+
+.head2 {
+  display: flex;
+  justify-content: center;
+}
+
+.container4 {
+  position: absolute;
+  left: 15px;
+  top: 14rem;
+  font-size: 25px;
+  font-weight: bold;
+  background: aquamarine;
+  font-family: "Baloo Tamma 2", cursive;
+  border-radius: 11px;
+  border: 2px solid black;
+  height: 53.5%;
+  width: 25.6%;
+  margin-top: -24px;
+}
+
+.enjoy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  margin-left: -20px;
+}
+
+
+#btn {
+  position: absolute;
+  background: rgb(240, 204, 0);
+  text-decoration: none;
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 11px;
+  border: 2px solid black;
+  margin-left: 1rem;
+  margin-top: 41rem;
+  padding: 2.5px;
 }
 
 /* Heading */
@@ -160,6 +204,7 @@ p {
   font-weight: bold;
   color: red;
 }
+
 .ok2 {
   font-size: 2.4rem;
   position: absolute;
