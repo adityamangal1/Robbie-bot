@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  /* background: #252839; */
+}
+
+/* Robot CSS */
+
+.robot {
+  position: absolute;
+  left: 30rem;
+  top: 13.3rem;
+  animation: moving 1s linear infinite;
+}
+
+.container3 {
+  display: none;
+}
+
+/* Logo */
+
+.logo {
+  position: absolute;
+  left: 31.5rem;
+  top: 0.5rem;
+  width: 13%;
+}
+
+.logo:hover {
+  width: 13.8%;
+  animation: color-change 0.4s linear infinite;
+}
+
+.box {
+  width: 43%;
+  height: 76%;
+  background: rgb(0, 255, 243);
+  position: absolute;
+  margin-left: 55rem;
+  margin-top: 11rem;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.slide-right {
+  position: absolute;
+  margin-left: 45rem;
+  margin-top: 3rem;
+  border: 2px solid;
+  border-radius: 5px;
+  background: rgb(239 3 255);
+  font-weight: bold;
+  font-family: "Baloo Tamma 2", cursive;
+  padding: 5px 33px;
+}
+
+.texts p.answer {
+  text-align: right;
+  animation: 2s slide-right;
+  font-size: 16px;
+}
+
+.texts p.user {
+  text-align: left;
+  animation: 2s slide-left;
+  font-size: 16px;
+}
+
+.butt {
+  background: aquamarine;
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 11px;
+  border: 2px solid black;
+  margin-left: 97rem;
+  margin-top: 22px;
+  padding: 7.5px;
+  animation: color-change 10s linear infinite;
+}
+
+.texts p {
+  font-weight: bold;
+  font-family: "Baloo Tamma 2", cursive;
+  border-radius: 4px;
+  height: 6%;
+  text-align: left;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-left: -2rem;
+}
+
+p {
+  animation: 0.5s slide-right;
+}
+
+.ml11 {
+  font-weight: 700;
+  font-size: 1.2em;
+  position: absolute;
+  left: 39rem;
+  top: 12rem;
+  color: green;
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: bold;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.ml11 .line1 {
+  top: 0;
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ok {
+  font-size: 2.4rem;
+  position: absolute;
+  left: 31.4rem;
+  top: -4.6rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: bold;
+  color: red;
+}
+.ok2 {
+  font-size: 2.4rem;
+  position: absolute;
+  left: 39rem;
+  top: -4.6rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Baloo Tamma 2", cursive;
+  font-weight: bold;
+  color: red;
+}
+
+.listen {
+  font-size: 2rem;
+  left: 0.3rem;
+  position: absolute;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40%, 100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Key frames for animations */
+
+@keyframes moving {
+  0% {
+    transform: translateY(-15px);
+    filter: hue-rotate(0deg);
+    transform: scale(260deg);
+  }
+  50% {
+    transform: translateY(20px);
+    transform: scale(260deg);
+  }
+  100% {
+    transform: translateY(-15px);
+    filter: hue-rotate(360deg);
+    transform: scale(260deg);
+  }
+}
+
+@keyframes color-change {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+    /* width: 100%;  */
+  }
+  to {
+    margin-left: 0%;
+    /* width: 100%; */
+  }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    /* width: 100%;  */
+  }
+  to {
+    margin-left: 0%;
+    /* width: 100%; */
+  }
+}
