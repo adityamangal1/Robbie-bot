@@ -12,7 +12,7 @@ body {
 
 .robot {
   position: absolute;
-  left: 30rem;
+  left: 26rem;
   top: 13.3rem;
   animation: moving 1s linear infinite;
 }
@@ -37,10 +37,10 @@ body {
 
 .box {
   width: 43%;
-  height: 76%;
+  height: 72.5%;
   background: rgb(0, 255, 243);
   position: absolute;
-  margin-left: 55rem;
+  margin-left: 52rem;
   margin-top: 11rem;
   border: 2px solid;
   border-radius: 10px;
@@ -70,16 +70,17 @@ body {
   height: 53.5%;
   width: 25.6%;
   margin-top: -24px;
+  padding: 2px 2px;
 }
 
 .enjoy {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
-  margin-left: -20px;
+  margin-top: -0rem;
+  margin-left: -9px;
+  font-size: 1.3rem;
 }
-
 
 #btn {
   position: absolute;
@@ -92,7 +93,7 @@ body {
   border-radius: 11px;
   border: 2px solid black;
   margin-left: 1rem;
-  margin-top: 41rem;
+  margin-top: 38rem;
   padding: 2.5px;
 }
 
@@ -100,7 +101,7 @@ body {
 
 .slide-right {
   position: absolute;
-  margin-left: 45rem;
+  margin-left: 38rem;
   margin-top: 3rem;
   border: 2px solid;
   border-radius: 5px;
@@ -130,7 +131,7 @@ body {
   font-size: 16px;
   border-radius: 11px;
   border: 2px solid black;
-  margin-left: 97rem;
+  margin-left: 88rem;
   margin-top: 22px;
   padding: 7.5px;
   animation: color-change 10s linear infinite;
@@ -152,6 +153,7 @@ body {
 
 p {
   animation: 0.5s slide-right;
+  padding: 4.5px;
 }
 
 .ml11 {
@@ -196,7 +198,7 @@ p {
 .ok {
   font-size: 2.4rem;
   position: absolute;
-  left: 31.4rem;
+  left: 24.4rem;
   top: -4.6rem;
   text-decoration: underline;
   text-transform: uppercase;
@@ -208,7 +210,7 @@ p {
 .ok2 {
   font-size: 2.4rem;
   position: absolute;
-  left: 39rem;
+  left: 32rem;
   top: -4.6rem;
   text-decoration: underline;
   text-transform: uppercase;

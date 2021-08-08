@@ -19,7 +19,7 @@ anime
     translateX: [
       0,
       document.querySelector(".ml11 .letters").getBoundingClientRect().width +
-        10,
+      10,
     ],
     easing: "easeOutExpo",
     duration: 700,
@@ -62,7 +62,6 @@ recognition.addEventListener("result", (e) => {
   p.innerText = "User Command: " + text;
   p.classList.add("user");
   texts.appendChild(p);
-  console.log(text);
 
   if (e.results[0].isFinal) {
     if (
@@ -78,7 +77,6 @@ recognition.addEventListener("result", (e) => {
     if (text.includes("meaning of ")) {
       word = text.slice(11);
       console.log(word);
-      // window.open("https://youtube.com/" +str)
       fetch(
         `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=7e7436ae-9a1a-48e5-a02d-6bfcab41cc8f`
       )
@@ -86,25 +84,72 @@ recognition.addEventListener("result", (e) => {
           return response.json();
         })
         .then((response) => {
-          console.log("ok" + response[0].shortdef[0]);
           p = document.createElement("p");
           p.classList.add("answer");
-          p.innerText = "Meaning: " + response[0].shortdef[0];
+          p.innerText = "Meaning 📚: " + response[0].shortdef[0];
           texts.appendChild(p);
         })
         .catch((err) => {
-          console.log(err);
-          definition.classList.add("error");
-          definition.textContent = "No Definition Available";
+          p = document.createElement("p");
+          p.classList.add("answer");
+          p.innerText = "Oops! No Definition Available";
+          texts.appendChild(p);
         });
 
     }
     if (text.includes("open YouTube")) {
       window.open('https://youtube.com')
     }
+
     if (text.includes("discord")) {
       window.open('https://discord.com/channels/@mes')
     }
+
+    if (text.includes("joke")) {
+      fetch("https://official-joke-api.appspot.com/jokes/programming/random")
+        .then((response) => {
+          return response.json();
+        })
+
+        .then((response) => {
+          p = document.createElement("p");
+          p.classList.add("answer");
+          p.innerText = response[0].setup;
+          texts.appendChild(p);
+          p = document.createElement("p");
+          p.innerText = "Answer: " + response[0].punchline + "😂😂";
+          texts.appendChild(p);
+        })
+
+        .catch((err) => {
+          p = document.createElement("p");
+          p.classList.add("answer");
+          p.innerText = "Sorry No Jokes Available";
+          texts.appendChild(p);
+        });
+    }
+    const rndInt = Math.floor(Math.random() * 1642) + 1
+    if (text.includes('thought')) {
+
+      fetch("https://type.fit/api/quotes")
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          console.log(response)
+          p = document.createElement("p");
+          p.classList.add("answer");
+          p.innerText = "✨ Here's a positive thought: " + response[rndInt].text + "✨";
+          texts.appendChild(p);
+        })
+        .catch((err) => {
+          p = document.createElement("p");
+          p.classList.add("answer");
+          p.innerText = "Sorry No thoughts Available";
+          texts.appendChild(p);
+        });
+    }
+
   }
 });
 
