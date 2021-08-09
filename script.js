@@ -64,6 +64,8 @@ recognition.addEventListener("result", (e) => {
   texts.appendChild(p);
 
   if (e.results[0].isFinal) {
+
+    // Greeting function
     if (
       text.includes("hai") ||
       text.includes("hey") ||
@@ -74,6 +76,8 @@ recognition.addEventListener("result", (e) => {
       p.innerText = "Bot: Hello Sir! How can I help you? 👋";
       texts.appendChild(p);
     }
+
+    // meaning of word funciton
     if (text.includes("meaning of ")) {
       word = text.slice(11);
       console.log(word);
@@ -105,30 +109,32 @@ recognition.addEventListener("result", (e) => {
       window.open('https://discord.com/channels/@mes')
     }
 
+    // Random joke function
     if (text.includes("joke")) {
       fetch("https://official-joke-api.appspot.com/jokes/programming/random")
-        .then((response) => {
-          return response.json();
-        })
-
-        .then((response) => {
-          p = document.createElement("p");
-          p.classList.add("answer");
-          p.innerText = response[0].setup;
-          texts.appendChild(p);
-          p = document.createElement("p");
-          p.innerText = "Answer: " + response[0].punchline + "😂😂";
-          texts.appendChild(p);
-        })
-
-        .catch((err) => {
-          p = document.createElement("p");
-          p.classList.add("answer");
-          p.innerText = "Sorry No Jokes Available";
-          texts.appendChild(p);
-        });
+      .then((response) => {
+        return response.json();
+      })
+      
+      .then((response) => {
+        p = document.createElement("p");
+        p.classList.add("answer");
+        p.innerText = response[0].setup;
+        texts.appendChild(p);
+        p = document.createElement("p");
+        p.innerText = "Answer: " + response[0].punchline + "😂😂";
+        texts.appendChild(p);
+      })
+      
+      .catch((err) => {
+        p = document.createElement("p");
+        p.classList.add("answer");
+        p.innerText = "Sorry No Jokes Available";
+        texts.appendChild(p);
+      });
     }
     const rndInt = Math.floor(Math.random() * 1642) + 1
+    // Random thought function
     if (text.includes('thought')) {
 
       fetch("https://type.fit/api/quotes")
@@ -158,3 +164,16 @@ recognition.addEventListener("end", () => {
 });
 
 recognition.start();
+
+// Pre loader for website
+
+var loader = document.querySelector(".loader");
+
+window.addEventListener("load", hideit);
+
+function hideit() {
+  setTimeout(() => {
+    loader.classList.add("dissapear");
+  }, 450);
+}
+

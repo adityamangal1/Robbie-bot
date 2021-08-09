@@ -225,6 +225,30 @@ p {
   position: absolute;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.dissapear {
+  animation: hide 1s forwards;
+}
+
+@keyframes hide {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @keyframes animate {
   0% {
     transform: translateY(0px);
