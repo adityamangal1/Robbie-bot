@@ -1,52 +1,51 @@
 // Wrap every letter in a span
-var textWrapper = document.querySelector(".ml11 .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(
-  /([^\x00-\x80]|\w)/g,
-  "<span class='letter'>$&</span>"
-);
+// var textWrapper = document.querySelector(".ml11 .letters");
+// textWrapper.innerHTML = textWrapper.textContent.replace(
+//   /([^\x00-\x80]|\w)/g,
+//   "<span class='letter'>$&</span>"
+// );
 
-anime
-  .timeline({ loop: true })
-  .add({
-    targets: ".ml11 .line",
-    scaleY: [0, 1],
-    opacity: [0.5, 1],
-    easing: "easeOutExpo",
-    duration: 700,
-  })
-  .add({
-    targets: ".ml11 .line",
-    translateX: [
-      0,
-      document.querySelector(".ml11 .letters").getBoundingClientRect().width +
-      10,
-    ],
-    easing: "easeOutExpo",
-    duration: 700,
-    delay: 100,
-  })
-  .add({
-    targets: ".ml11 .letter",
-    opacity: [0, 1],
-    easing: "easeOutExpo",
-    duration: 600,
-    offset: "-=775",
-    delay: (el, i) => 34 * (i + 1),
-  })
-  .add({
-    targets: ".ml11",
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000,
-  });
+// anime
+//   .timeline({ loop: true })
+//   .add({
+//     targets: ".ml11 .line",
+//     scaleY: [0, 1],
+//     opacity: [0.5, 1],
+//     easing: "easeOutExpo",
+//     duration: 700,
+//   })
+//   .add({
+//     targets: ".ml11 .line",
+//     translateX: [
+//       0,
+//       document.querySelector(".ml11 .letters").getBoundingClientRect().width +
+//       10,
+//     ],
+//     easing: "easeOutExpo",
+//     duration: 700,
+//     delay: 100,
+//   })
+//   .add({
+//     targets: ".ml11 .letter",
+//     opacity: [0, 1],
+//     easing: "easeOutExpo",
+//     duration: 600,
+//     offset: "-=775",
+//     delay: (el, i) => 34 * (i + 1),
+//   })
+//   .add({
+//     targets: ".ml11",
+//     opacity: 0,
+//     duration: 1000,
+//     easing: "easeOutExpo",
+//     delay: 1000,
+//   });
 
 const texts = document.querySelector(".texts");
 
 // Recognition initializer
 
-window.SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new window.SpeechRecognition();
 recognition.interimResults = true;
@@ -111,7 +110,9 @@ recognition.addEventListener("result", (e) => {
 
     // Random joke function
     if (text.includes("joke")) {
-      fetch("https://official-joke-api.appspot.com/jokes/programming/random")
+      // fetch("https://twittezer.herokuapp.com/random")
+      fetch("https://geek-jokes.sameerkumar.website/api?format=json")
+        
       .then((response) => {
         return response.json();
       })
@@ -119,13 +120,11 @@ recognition.addEventListener("result", (e) => {
       .then((response) => {
         p = document.createElement("p");
         p.classList.add("answer");
-        p.innerText = response[0].setup;
-        texts.appendChild(p);
-        p = document.createElement("p");
-        p.innerText = "Answer: " + response[0].punchline + "😂😂";
+        console.log(response)
+        p.innerText = response.joke + "😂😂";
         texts.appendChild(p);
       })
-      
+
       .catch((err) => {
         p = document.createElement("p");
         p.classList.add("answer");
@@ -142,7 +141,6 @@ recognition.addEventListener("result", (e) => {
           return response.json();
         })
         .then((response) => {
-          console.log(response)
           p = document.createElement("p");
           p.classList.add("answer");
           p.innerText = "✨ Here's a positive thought: " + response[rndInt].text + "✨";
@@ -165,7 +163,7 @@ recognition.addEventListener("end", () => {
 
 recognition.start();
 
-// Pre loader for website
+// Pre loader for App while it loads
 
 var loader = document.querySelector(".loader");
 
