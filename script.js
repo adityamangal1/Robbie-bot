@@ -36,7 +36,7 @@ recognition.addEventListener("result", (e) => {
     // meaning of word funciton
     if (text.includes("meaning of ")) {
       word = text.slice(11);
-      console.log(word);
+      // console.log(word);
       fetch(
         `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=7e7436ae-9a1a-48e5-a02d-6bfcab41cc8f`
       )
