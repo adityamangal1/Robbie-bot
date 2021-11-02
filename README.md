@@ -27,7 +27,7 @@ Fetch APIs and display the output in a proficient manner. Learned deep knowledge
 ## What's next for Robbie bot 🤖
 I'm working on some more HTML pages which will gonna linked to this project with more info and one more mini-game. And trying to make it more user-friendly. And more productive functions to the bot
 
-## 🎉 Wins in these hackathons 🎉 
+## 🎉 Hackathons Wons with this project 🎉 
 
 [Devpost link](https://devpost.com/software/robbie-bot) 💻
 ```
