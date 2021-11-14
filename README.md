@@ -18,7 +18,14 @@ I used HTML, CSS, and JavaScript. Images and gifs with transform effects with th
 
 ![Screenshot (373)](https://user-images.githubusercontent.com/68494604/128628331-c69a8718-f205-422e-8d3e-2a2e2401cd82.png)
 
-![Screenshot (375)](https://user-images.githubusercontent.com/68494604/128628332-933400bf-5bec-4d87-9637-b956d8a58d2d.png)
+<p align="center">
+  <img alt="Sloan, the sloth mascot" width="710px" src="https://user-images.githubusercontent.com/68494604/141687641-5f8523bb-80f7-421d-8f91-a5f55e74cf3d.gif">
+   <br>
+</p>
+<!-- ![Screenshot (375)](https://user-images.githubusercontent.com/68494604/128628332-933400bf-5bec-4d87-9637-b956d8a58d2d.png) -->
+
+
+
 
 
 ## What we learned
