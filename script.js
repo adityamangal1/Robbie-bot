@@ -131,4 +131,3 @@ function hideit() {
     loader.classList.add("dissapear");
   }, 450);
 }
-
